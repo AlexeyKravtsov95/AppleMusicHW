@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct TabBarViews: View {
+struct TabBarView: View {
     var body: some View {
         ZStack (alignment: Alignment(horizontal: .center, vertical: .bottom)) {
             TabView {
@@ -33,8 +33,8 @@ struct TabBarViews: View {
     }
 }
 
-struct TabBarViews_Previews: PreviewProvider {
+struct TabBarView_Previews: PreviewProvider {
     static var previews: some View {
-        TabBarViews()
+        TabBarView()
     }
 }
