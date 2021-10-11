@@ -16,7 +16,7 @@ struct LibraryEmptyView: View {
                         .bold()
                     VStack {
                         Text("Здесь появится купленная Вами в iTunes Store музыка.")
-                            .font(.title3)
+                            .font(.title2)
                             .foregroundColor(.gray)
                             .multilineTextAlignment(.center)
                     }
