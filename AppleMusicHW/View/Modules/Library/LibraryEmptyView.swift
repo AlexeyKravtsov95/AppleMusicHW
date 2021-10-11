@@ -20,8 +20,7 @@ struct LibraryEmptyView: View {
                             .foregroundColor(.gray)
                             .multilineTextAlignment(.center)
                     }
-                    .font(.subheadline)
-            }
+            }.padding()
         }
     }
 }
