@@ -15,12 +15,13 @@ struct LibraryEmptyView: View {
                         .font(.title)
                         .bold()
                     VStack {
-                        Text("Здесь появится купленная Вами в iTunes Store музыка.")
+                        Text("Здесь появится купленная Вами в\n iTunes Store музыка.")
                             .font(.title2)
                             .foregroundColor(.gray)
                             .multilineTextAlignment(.center)
                     }
-            }.padding()
+                    .font(.subheadline)
+            }
         }
     }
 }
