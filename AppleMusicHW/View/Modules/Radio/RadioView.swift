@@ -13,8 +13,16 @@ struct RadioView: View {
             ScrollView(.vertical, showsIndicators: false) {
                 VStack (alignment: .leading) {
                     Divider()
+                        .padding(.top, 5)
                     RadioListView()
-                        .offset(y: -15)
+                        .frame(height: 340)
+                    Divider()
+                        .padding(.top, 20)
+                    Text("Станции")
+                        .bold()
+                        .font(.title2)
+                        .padding(.leading)
+                    StationListView()
                 }
             }
             .navigationTitle("Радио")
