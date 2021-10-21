@@ -22,7 +22,7 @@ struct StationListView: View {
                             .resizable()
                             .cornerRadius(6)
                             .scaledToFit()
-                            .frame(width: 150)
+                            .frame(width: 110)
                         VStack(alignment:.leading) {
                             Text(data.title)
                                 .font(.title3)

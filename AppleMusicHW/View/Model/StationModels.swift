@@ -15,16 +15,16 @@ struct StationModels {
 
 extension StationModels: Hashable {
     static var data = [
-        StationModels(image: "station country",
+        StationModels(image: "country pepe",
                       title: "Кантри-хиты",
                       subtitle: "Актуальное звучание"),
-        StationModels(image: "station hits",
+        StationModels(image: "pepe hits",
                       title: "Хиты",
                       subtitle: "То, что слушают прямо сейчас"),
-        StationModels(image: "station chill",
+        StationModels(image: "chill pepe",
                       title: "Чилаут",
                       subtitle: "Электронная медитация"),
-        StationModels(image: "station classic hip-hop",
+        StationModels(image: "pepe rap",
                       title: "Классика хип-хопа",
                       subtitle: "Кто сделал рэп таким")
     ]
