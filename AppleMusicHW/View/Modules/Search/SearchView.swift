@@ -39,15 +39,17 @@ struct SearchView: View {
                         ) {
                             ForEach(categoryData, id: \.self) {
                                 data in
+                                NavigationLink(destination: SearchDetailView()) {
                                 ZStack(alignment: .leading) {
                                     Image(data.image)
                                         .resizable()
-                                        .frame(width: 190, height: 140)
+                                        .frame(width: 170, height: 135)
                                         .cornerRadius(7)
                                     Text(data.name)
                                         .fontWeight(.bold)
                                         .foregroundColor(.white)
                                         .padding(.init(top: 100, leading: 12, bottom: 0, trailing: 12))
+                                    }
                                 }
                             }
                         }
