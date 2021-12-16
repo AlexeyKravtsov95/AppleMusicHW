@@ -26,6 +26,7 @@
 		8CD1B1E1275E184300F95ED0 /* SearchDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD1B1E0275E184300F95ED0 /* SearchDetailView.swift */; };
 		8CD1B1E3275E1AAC00F95ED0 /* SearchDetailListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD1B1E2275E1AAC00F95ED0 /* SearchDetailListView.swift */; };
 		8CD1B1E5275E1AE900F95ED0 /* SearchDetailStationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD1B1E4275E1AE900F95ED0 /* SearchDetailStationView.swift */; };
+		8CEAEF93276762AC00C424B4 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEAEF92276762AC00C424B4 /* PlayerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		8CD1B1E0275E184300F95ED0 /* SearchDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailView.swift; sourceTree = "<group>"; };
 		8CD1B1E2275E1AAC00F95ED0 /* SearchDetailListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailListView.swift; sourceTree = "<group>"; };
 		8CD1B1E4275E1AE900F95ED0 /* SearchDetailStationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailStationView.swift; sourceTree = "<group>"; };
+		8CEAEF92276762AC00C424B4 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				8C8A60412710C4A80008628F /* MediaPlayerView.swift */,
+				8CEAEF92276762AC00C424B4 /* PlayerView.swift */,
 			);
 			path = Player;
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 				8C8A6083271F53460008628F /* StationModels.swift in Sources */,
 				8C9EE2C3270C5E6200E2F852 /* LibraryEmptyView.swift in Sources */,
 				8C9EE2B4270C58D600E2F852 /* AppleMusicHWApp.swift in Sources */,
+				8CEAEF93276762AC00C424B4 /* PlayerView.swift in Sources */,
 				8CD1B1E3275E1AAC00F95ED0 /* SearchDetailListView.swift in Sources */,
 				8C8A607D271F38CA0008628F /* RadioModels.swift in Sources */,
 				8C9EE2C5270C689B00E2F852 /* TabBarViews.swift in Sources */,
