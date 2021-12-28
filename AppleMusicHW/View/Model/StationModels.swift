@@ -7,13 +7,17 @@
 
 import Foundation
 
-struct StationModels {
+class StationModelsData: ObservableObject {
+    @Published var data = StationModels.data
+}
+
+struct StationModels: Hashable {
     var image: String
     var title: String
     var subtitle: String
 }
 
-extension StationModels: Hashable {
+extension StationModels {
     static var data = [
         StationModels(image: "country pepe",
                       title: "Кантри-хиты",
