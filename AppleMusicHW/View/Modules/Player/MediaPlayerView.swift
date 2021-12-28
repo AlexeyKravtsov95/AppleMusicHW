@@ -180,9 +180,9 @@ struct MediaPlayerView: View {
             VStack(spacing: 0) {
                 PlayerView()
                 Divider()
-            }.onTapGesture(perform: {
+            }.onTapGesture(count: 2) {
                 withAnimation(.spring()){expand = true}
-            })
+            }
         )
         .cornerRadius(expand ? 20 : 0)
         .offset(y: expand ? 0 : -48)
