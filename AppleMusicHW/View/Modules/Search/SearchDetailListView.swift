@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SearchDetailListView: View {
-    private let listData = RadioModels.data
+    @ObservedObject private var listData = RadioModelsData()
     private let rows = [
         GridItem(.fixed(320))
     ]
@@ -16,7 +16,7 @@ struct SearchDetailListView: View {
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             LazyHGrid(rows: rows) {
-                ForEach(listData, id: \.self) { data in
+                ForEach(listData.data, id: \.self) { data in
                     VStack(alignment: .leading) {
                         Text(data.title)
                             .foregroundColor(.secondary)

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SearchView: View {
     @State private var searchText = ""
-    private let categoryData = CategoryModels.data
+    @ObservedObject private var categoryData = CategoryModelsData()
 
     private let columns = [
         GridItem(.flexible()),
@@ -37,7 +37,7 @@ struct SearchView: View {
                                     .font(.title3)
                                     .padding(.top, 10)
                         ) {
-                            ForEach(categoryData, id: \.self) {
+                            ForEach(categoryData.data, id: \.self) {
                                 data in
                                 NavigationLink(destination: SearchDetailView()) {
                                 ZStack(alignment: .leading) {

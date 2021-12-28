@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SearchDetailStationView: View {
-    private let listData = StationModels.data
+    @ObservedObject private var listData = StationModelsData()
     private let rows = [
         GridItem(.flexible())
     ]
@@ -16,7 +16,7 @@ struct SearchDetailStationView: View {
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             LazyHGrid(rows: rows, spacing: 10) {
-                ForEach(listData, id: \.self) { data in
+                ForEach(listData.data, id: \.self) { data in
                     HStack() {
                         Image(data.image)
                             .resizable()
