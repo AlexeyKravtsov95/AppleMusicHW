@@ -34,6 +34,7 @@ struct MediaPlayerView: View {
             }
             .offset(y: 2)
             .padding()
+
         }
         .frame(height:65)
         .background(Color.init("LightGray"))
