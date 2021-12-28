@@ -7,18 +7,14 @@
 
 import Foundation
 
-class RadioModelsData: ObservableObject {
-    @Published var data = RadioModels.data
-}
-
-struct RadioModels: Hashable {
+struct RadioModels {
     var title: String
     var subtitle: String
     var musicType: String
     var image: String
 }
 
-extension RadioModels {
+extension RadioModels: Hashable {
     static var data = [
         RadioModels(title: "Избранная радиостанция",
                     subtitle: "Хиты",
