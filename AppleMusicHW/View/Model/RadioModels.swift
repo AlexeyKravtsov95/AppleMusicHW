@@ -7,6 +7,10 @@
 
 import Foundation
 
+class RadioModelsData: ObservableObject {
+    @Published var data = RadioModels.data
+}
+
 struct RadioModels {
     var title: String
     var subtitle: String
