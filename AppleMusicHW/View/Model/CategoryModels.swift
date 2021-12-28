@@ -7,12 +7,16 @@
 
 import Foundation
 
-struct CategoryModels {
+class CategoryModelsData: ObservableObject {
+    @Published var data = CategoryModels.data
+}
+
+struct CategoryModels: Hashable {
     var image: String
     var name: String
 }
 
-extension CategoryModels: Hashable {
+extension CategoryModels {
     static var data = [
         CategoryModels(image: "wintertime",
                        name: "Зимнее время"),
