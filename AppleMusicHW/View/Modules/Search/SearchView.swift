@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct SearchView: View {
-    @State private var searchText = ""
+    @State private var searchText: String = "Ваша медиатека"
     @ObservedObject private var categoryData = CategoryModelsData()
+    @ObservedObject var searchList = SearchBar()
+    @State private var selectedSearch = 1
     
     private let columns = [
         GridItem(.flexible()),
@@ -18,17 +20,6 @@ struct SearchView: View {
     var body: some View {
         NavigationView {
             VStack {
-                HStack (spacing: 5){
-                    Image(systemName: "magnifyingglass")
-                        .font(.system(size: 26))
-                        .foregroundColor(Color(.lightGray))
-                        .padding(.leading, 15)
-                    TextField("Ваша Медиатека", text: $searchText)
-                }
-                .frame(height: 45)
-                .background(Color.init(.systemGray6))
-                .cornerRadius(15)
-                .padding(.init(top: 5, leading: 12, bottom: 5, trailing: 12))
                 ScrollView(showsIndicators: false) {
                     LazyVGrid(columns: columns, alignment: .leading) {
                         Section(header:
@@ -59,6 +50,35 @@ struct SearchView: View {
                 .padding(.trailing, 12)
             }
             .navigationTitle("Поиск")
+            .searchable(text: $searchList.searchText,
+                        placement:.navigationBarDrawer(displayMode:.always),
+                        prompt: self.$searchText.wrappedValue) {
+            VStack(alignment: .leading, spacing: 15) {
+                Picker("SearchSource", selection: $selectedSearch) {
+                                        Text("Apple Music").tag(0)
+                                        Text("Ваша медиатека").tag(1)
+                    }
+                .onChange(of: selectedSearch) { tag in
+                    if tag == 0 {
+                        searchList.fetchDataApple()
+                        searchText = "Артисты, песни, тексты и др."
+                    } else {
+                        searchList.fetchDataOwn()
+                        searchText = "Ваша медиатека"
+                        }
+                    }
+                .pickerStyle(.segmented)
+                ScrollView {
+                    LazyVGrid(columns: [GridItem(.flexible())], alignment: .leading) {
+                        ForEach(searchList.filteredTrack, id: \.self) { track in
+                            SearchViewCell(track: track, imageWidth: 42)
+                                .searchCompletion(track.title)
+                                .tint(.primary)
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }
