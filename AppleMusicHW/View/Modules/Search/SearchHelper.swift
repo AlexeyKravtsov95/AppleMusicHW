@@ -8,7 +8,7 @@
 import SwiftUI
 import Combine
 
-class SearchBar: ObservableObject {
+class SearchHelper: ObservableObject {
     private var track = [SearchModel]()
     var filteredTrack = [SearchModel]()
     
