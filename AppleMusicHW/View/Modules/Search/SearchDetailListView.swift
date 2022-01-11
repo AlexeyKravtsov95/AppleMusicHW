@@ -10,7 +10,7 @@ import SwiftUI
 struct SearchDetailListView: View {
     @ObservedObject private var listData = RadioModelsData()
     private let rows = [
-        GridItem(.fixed(320))
+        GridItem(.fixed(Size.searchDetailListViewGridSize))
     ]
 
     var body: some View {
@@ -20,16 +20,16 @@ struct SearchDetailListView: View {
                     VStack(alignment: .leading) {
                         Text(data.title)
                             .foregroundColor(.secondary)
-                            .font(.system(size: 20))
+                            .font(.system(size: FontSize.fontSize20))
                         Text(data.subtitle)
-                            .font(.system(size: 22))
+                            .font(.system(size: FontSize.fontSize22))
                         Text(data.musicType)
                             .foregroundColor(.secondary)
-                            .font(.system(size: 22))
+                            .font(.system(size: FontSize.fontSize22))
                         Image(data.image)
                             .resizable()
-                            .frame(width:380)
-                            .cornerRadius(6)
+                            .frame(width:Size.searchDetailListViewImageFrameWidth)
+                            .cornerRadius(Size.radius6)
                     }
                 }
             }.padding()

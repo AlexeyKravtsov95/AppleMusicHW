@@ -9,11 +9,11 @@ import SwiftUI
 
 struct BottomSectionView: View {
     var body: some View {
-        HStack(spacing: 10) {
+        HStack(spacing: StackSpacing.Hspacing10) {
             Button(action: {}) {
                 Image(systemName: "quote.bubble")
                     .resizable()
-                    .frame(width: 23, height: 23)
+                    .frame(width: Size.bottomSectionImageFrameWidth, height: Size.bottomSectionImageFrameHeight)
                     .foregroundColor(.primary)
             }
             .padding()
@@ -22,7 +22,7 @@ struct BottomSectionView: View {
             Button(action: {}) {
                 Image(systemName: "airplayaudio")
                     .resizable()
-                    .frame(width: 23, height: 23)
+                    .frame(width: Size.bottomSectionImageFrameWidth, height: Size.bottomSectionImageFrameHeight)
                     .foregroundColor(.primary)
             }
             .padding()
@@ -31,7 +31,7 @@ struct BottomSectionView: View {
             Button(action: {}) {
                 Image(systemName: "list.bullet")
                     .resizable()
-                    .frame(width: 23, height: 18)
+                    .frame(width: Size.bottomSectionImageFrameWidth, height: Size.bottomSectionImageFrameHeight)
                     .foregroundColor(.primary)
             }
             .padding()

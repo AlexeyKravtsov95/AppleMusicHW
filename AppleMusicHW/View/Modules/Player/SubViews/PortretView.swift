@@ -16,11 +16,11 @@ struct PortretView: View {
     var body: some View {
         Capsule()
             .fill(Color.gray)
-            .frame(width: expand ? 60 : 0, height: expand ? 6 : 0)
+            .frame(width: expand ? Size.portretViewCapsuleFrameWidth : 0, height: expand ? Size.portretViewCapsuleFrameHeight : 0)
             .opacity(expand ? 1 : 0)
             .padding(.top, expand ? safeArea?.top : 0)
-            .padding(.vertical, expand ? 30 : 0)
-        HStack(spacing: 15) {
+            .padding(.vertical, expand ? Padding.portretViewPaddingVertical : 0)
+        HStack(spacing: StackSpacing.Hspacing15) {
             if expand {
                 Spacer(minLength: 0)
             }
@@ -28,8 +28,8 @@ struct PortretView: View {
                 .resizable()
                 .shadow(color: .gray, radius: 15, x: 0.0, y: 5.0)
                 .aspectRatio(contentMode: .fill)
-                .frame(width: expand ? height : 55, height: expand ? height : 55)
-                .cornerRadius(15)
+                .frame(width: expand ? height : Size.portretViewImageFrameWidth, height: expand ? height : Size.portretViewImageFrameHeight)
+                .cornerRadius(Size.radius15)
             if !expand {
                 Text("Linkin Park - Burn It Down")
                     .fontWeight(.regular)

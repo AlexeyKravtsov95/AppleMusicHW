@@ -12,16 +12,16 @@ struct SearchDetailView: View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack (alignment: .leading) {
                 SearchDetailListView()
-                    .frame(height: 340)
+                    .frame(height: Size.searchDetailViewFrameSizeHeight)
                 Divider()
-                    .padding(.top, 10)
+                    .padding(.top, Padding.searchDetailViewPaddingTopDivider)
                 HStack {
                     Text("Настроение - осень")
                         .bold()
                         .font(.title2)
                         .padding(.leading)
                     Text("См. все")
-                        .padding(.leading, 64)
+                        .padding(.leading, Padding.searchDetailViewPaddingLeadingText)
                         .foregroundColor(.red)
                 }
                     SearchDetailStationView()

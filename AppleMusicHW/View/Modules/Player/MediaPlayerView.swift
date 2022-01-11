@@ -13,7 +13,6 @@ struct MediaPlayerView: View {
 
     @Namespace var animation
     var height = UIScreen.main.bounds.height / 3
-    var safeArea = UIApplication.shared.windows.first?.safeAreaInsets
     
     var body: some View {
         VStack {
@@ -28,7 +27,7 @@ struct MediaPlayerView: View {
                 
         }
         
-        .frame(maxHeight: expand ?.infinity : 70)
+        .frame(maxHeight: expand ?.infinity : Size.mediaPlayerViewMaxHeight)
         .background(
             VStack(spacing: 0) {
                 PlayerView()
@@ -37,13 +36,12 @@ struct MediaPlayerView: View {
                 withAnimation(.spring()){expand = true}
             }
         )
-        .cornerRadius(expand ? 20 : 0)
-        .offset(y: expand ? 0 : -48)
+        .cornerRadius(expand ? Size.radius20 : 0)
+        .offset(y: expand ? 0 : Size.mediaPlayerViewOffsetY)
         .offset(y: offset)
         .gesture(DragGesture().onEnded(onEnded(value:)).onChanged(onChanged(value:)))
         .ignoresSafeArea()
     }
-    
     
     func onChanged(value: DragGesture.Value) {
         
@@ -55,7 +53,7 @@ struct MediaPlayerView: View {
     
     func onEnded(value: DragGesture.Value) {
         
-        withAnimation(.interactiveSpring(response: 0.5, dampingFraction: 0.95, blendDuration: 0.95)) {
+        withAnimation(.interactiveSpring(response: Animation.response, dampingFraction: Animation.dampingFraction, blendDuration: Animation.blendDuration)) {
             
             if value.translation.height > height {
                 expand = false

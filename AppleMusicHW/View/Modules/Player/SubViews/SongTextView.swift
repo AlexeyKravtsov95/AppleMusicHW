@@ -17,12 +17,12 @@ struct SongTextView: View {
                     Text("Burning It Down")
                         .foregroundColor(.black)
                         .bold()
-                        .font(.system(size: 22))
+                        .font(.system(size: FontSize.fontSize22))
                     Text("Linkin Park")
                         .foregroundColor(.black)
-                        .font(.system(size: 20))
+                        .font(.system(size: FontSize.fontSize20))
                 }
-                .frame(width: 170)
+                .frame(width: Size.songTextViewFrameWidth)
             }
 
             Spacer(minLength: 0)

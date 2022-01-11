@@ -12,12 +12,12 @@ struct SearchViewCell: View {
     var imageWidth: CGFloat = 100
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 8) {
+        VStack(alignment: .leading, spacing: StackSpacing.Vspacing8) {
             HStack {
                 Image(track.imageName)
                     .resizable()
                     .scaledToFit()
-                    .clipShape(RoundedRectangle(cornerRadius: 6))
+                    .clipShape(RoundedRectangle(cornerRadius: Size.radius6))
                     .frame(width: imageWidth, height: imageWidth)
             VStack(alignment: .leading) {
                     Text(track.title)
@@ -28,10 +28,10 @@ struct SearchViewCell: View {
                         .foregroundColor(.secondary)
                     }
                 }
-                .padding(.leading, 6)
+            .padding(.leading, Padding.searchViewCellPaddingLeading)
             }
             Divider()
-                .padding(.leading, imageWidth + 14)
+                .padding(.leading, imageWidth + Padding.searchViewCellPaddingLeadingDivider)
         }
     }
 }

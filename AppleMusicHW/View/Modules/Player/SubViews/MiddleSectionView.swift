@@ -15,28 +15,28 @@ struct MiddleSectionView: View {
         HStack {
             ZStack {
                 Circle()
-                    .frame(width: 7, height: 10)
-                    .padding(.trailing, 330)
+                    .frame(width: Size.middleSectionViewCircleFrameWidth, height: Size.middleSectionViewCircleFrameHeight)
+                    .padding(.trailing, Padding.middleSectionViewCirclePaddingTrailing)
 
                 Capsule()
-                    .frame(width: 330, height: 2)
+                    .frame(width: Size.middleSectionViewCapsuleWidth, height: Size.middleSectionViewCapsuleHeight)
             }
         }
         HStack {
             Text("0:00")
-                .font(.system(size: 12))
+                .font(.system(size: FontSize.fontSize12))
                 .foregroundColor(.primary)
-                .padding(.trailing, 130)
+                .padding(.trailing, Padding.middleSectionViewTextPaddingTrailing)
             Text("-4:12")
-                .font(.system(size: 12))
+                .font(.system(size: FontSize.fontSize12))
                 .foregroundColor(.primary)
-                .padding(.leading, 130)
+                .padding(.leading, Padding.middleSectionViewTextPaddingLeading)
         }
         HStack {
             Button(action: {}) {
                 Image(systemName: "backward.fill")
                     .resizable()
-                    .frame(width: 45, height: 25)
+                    .frame(width: Size.middleSectionImageBackWidth, height: Size.middleSectionImageBackHeight)
                     .foregroundColor(.primary)
             }
             .padding()
@@ -44,7 +44,7 @@ struct MiddleSectionView: View {
             Button(action: {}) {
                 Image(systemName: "play.fill")
                     .resizable()
-                    .frame(width: 35, height: 40)
+                    .frame(width: Size.middleSectionViewImagePlayWidth, height: Size.middleSectionViewImagePlayHeight)
                     .foregroundColor(.primary)
             }
             .padding()
@@ -52,7 +52,7 @@ struct MiddleSectionView: View {
             Button(action: {}) {
                 Image(systemName: "forward.fill")
                     .resizable()
-                    .frame(width: 45, height: 25)
+                    .frame(width: Size.middleSectionViewImageForwardWidth, height: Size.middleSectionViewImageForwardHeight)
                     .foregroundColor(.primary)
             }
             .padding()
@@ -61,7 +61,7 @@ struct MiddleSectionView: View {
         
         Spacer(minLength: 0)
         
-        HStack(spacing: 15) {
+        HStack(spacing: StackSpacing.Hspacing15) {
             Image(systemName: "speaker.fill")
             Slider(value: $volume).accentColor(.red)
             Image(systemName: "speaker.wave.2.fill")
