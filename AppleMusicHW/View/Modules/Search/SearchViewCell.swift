@@ -35,10 +35,3 @@ struct SearchViewCell: View {
         }
     }
 }
-
-
-struct SearchViewCell_Previews: PreviewProvider {
-    static var previews: some View {
-        SearchViewCell(track: sampleTrack)
-    }
-}

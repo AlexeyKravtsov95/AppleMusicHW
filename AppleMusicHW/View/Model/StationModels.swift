@@ -7,10 +7,6 @@
 
 import Foundation
 
-class StationModelsData: ObservableObject {
-    @Published var data = StationModels.data
-}
-
 struct StationModels {
     var image: String
     var title: String

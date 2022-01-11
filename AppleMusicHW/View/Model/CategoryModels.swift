@@ -7,10 +7,6 @@
 
 import Foundation
 
-class CategoryModelsData: ObservableObject {
-    @Published var data = CategoryModels.data
-}
-
 struct CategoryModels: Hashable {
     var image: String
     var name: String
