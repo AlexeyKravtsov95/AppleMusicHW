@@ -30,7 +30,7 @@ struct SearchDetailView: View {
             .navigationTitle("Зимнее время")
             .navigationBarItems(
                 trailing:
-                    Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                    Button(action: {}, label: {
                         Image(systemName: "ellipsis")
                             .foregroundColor(.red)
                     })
