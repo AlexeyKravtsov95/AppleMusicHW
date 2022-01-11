@@ -10,7 +10,7 @@ import SwiftUI
 struct SearchView: View {
     @State private var searchText: String = "Ваша медиатека"
     @ObservedObject private var categoryData = CategoryModelsData()
-    @ObservedObject var searchList = SearchBar()
+    @ObservedObject var searchList = SearchHelper()
     @State private var selectedSearch = 1
     
     private let columns = [
@@ -26,7 +26,7 @@ struct SearchView: View {
                             Text("Поиск по категориям")
                                 .fontWeight(.bold)
                                 .font(.title3)
-                                .padding(.top, 10)
+                                    .padding(.top, Padding.searchViewPaddingTopTextSearch)
                             ) {
                             ForEach(categoryData.data, id: \.self) {
                                 data in
@@ -34,26 +34,26 @@ struct SearchView: View {
                                 ZStack(alignment: .leading) {
                                     Image(data.image)
                                         .resizable()
-                                        .frame(width: 170, height: 135)
-                                        .cornerRadius(7)
+                                        .frame(width: Size.searchViewFrameSizeWidth, height: Size.searchViewFrameSizeHeight)
+                                        .cornerRadius(Size.radius6)
                                     Text(data.name)
                                         .fontWeight(.bold)
                                         .foregroundColor(.white)
-                                        .padding(.init(top: 100, leading: 12, bottom: 0, trailing: 12))
+                                        .padding(.init(top: Padding.searchViewPaddingTopDataText, leading: Padding.searchViewPaddingLeading, bottom: Padding.searchViewPaddingBottomDataText, trailing: Padding.searchViewPaddingTrailing))
                                     }
                                 }
                             }
                         }
                     }
                 }
-                .padding(.leading, 12)
-                .padding(.trailing, 12)
+                .padding(.leading, Padding.searchViewPaddingLeading)
+                .padding(.trailing, Padding.searchViewPaddingTrailing)
             }
             .navigationTitle("Поиск")
             .searchable(text: $searchList.searchText,
                         placement:.navigationBarDrawer(displayMode:.always),
                         prompt: self.$searchText.wrappedValue) {
-            VStack(alignment: .leading, spacing: 15) {
+                VStack(alignment: .leading, spacing: StackSpacing.Vspacing15) {
                 Picker("SearchSource", selection: $selectedSearch) {
                                         Text("Apple Music").tag(0)
                                         Text("Ваша медиатека").tag(1)

@@ -11,7 +11,6 @@ struct PlayerView: UIViewRepresentable {
     
     func makeUIView(context: Context) -> UIVisualEffectView {
         let view = UIVisualEffectView(effect: UIBlurEffect(style: .systemChromeMaterial))
-        
         return view
     }
     

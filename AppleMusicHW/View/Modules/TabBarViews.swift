@@ -9,7 +9,6 @@ import SwiftUI
 
 struct TabBarView: View {
     @State var expand = false
-    @Namespace var animation
 
     var body: some View {
         ZStack (alignment: Alignment(horizontal: .center, vertical: .bottom)) {
@@ -31,7 +30,7 @@ struct TabBarView: View {
                     }
             }
             .accentColor(.red)
-            MediaPlayerView(expand: $expand, animation: animation)
+            MediaPlayerView(expand: $expand)
         }
     }
 }

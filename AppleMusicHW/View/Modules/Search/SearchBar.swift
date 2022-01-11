@@ -2,42 +2,19 @@
 //  SearchBar.swift
 //  AppleMusicHW
 //
-//  Created by a.kravcov on 28.12.2021.
+//  Created by a.kravcov on 11.01.2022.
 //
 
 import SwiftUI
-import Combine
 
-class SearchBar: ObservableObject {
-    private var track = [SearchModel]()
-    var filteredTrack = [SearchModel]()
-    
-    var publisher: AnyCancellable?
-    
-    @Published var searchText = ""
-    
-    init() {
-        fetchDataOwn()
-        
-        publisher = $searchText
-            .receive(on: RunLoop.main)
-            .sink(receiveValue: { str in
-                if !self.searchText.isEmpty {
-                    self.filteredTrack = self.track.filter { $0.title.localizedCaseInsensitiveContains(str) }
-                } else {
-                    self.filteredTrack = self.track
-                }
-            })
-    }
-    
-    func fetchDataApple() {
-        track = appleMusic
-        filteredTrack = track
-    }
-
-    func fetchDataOwn() {
-        track = radioStationList
-        filteredTrack = track
+struct SearchBar: View {
+    var body: some View {
+        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
 }
 
+struct SearchBar_Previews: PreviewProvider {
+    static var previews: some View {
+        SearchBar()
+    }
+}
