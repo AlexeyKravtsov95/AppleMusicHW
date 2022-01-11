@@ -39,21 +39,21 @@ struct SearchView: View {
                                     Text(data.name)
                                         .fontWeight(.bold)
                                         .foregroundColor(.white)
-                                        .padding(.init(top: Padding.searchViewPaddingTopDataText, leading: Padding.searchViewPaddingLeadingDataText, bottom: Padding.searchViewPaddingBottomDataText, trailing: Padding.searchViewPaddingTrailingDataText))
+                                        .padding(.init(top: Padding.searchViewPaddingTopDataText, leading: Padding.searchViewPaddingLeading, bottom: Padding.searchViewPaddingBottomDataText, trailing: Padding.searchViewPaddingTrailing))
                                     }
                                 }
                             }
                         }
                     }
                 }
-                .padding(.leading, 12)
-                .padding(.trailing, 12)
+                .padding(.leading, Padding.searchViewPaddingLeading)
+                .padding(.trailing, Padding.searchViewPaddingTrailing)
             }
             .navigationTitle("Поиск")
             .searchable(text: $searchList.searchText,
                         placement:.navigationBarDrawer(displayMode:.always),
                         prompt: self.$searchText.wrappedValue) {
-            VStack(alignment: .leading, spacing: 15) {
+                VStack(alignment: .leading, spacing: StackSpacing.Vspacing15) {
                 Picker("SearchSource", selection: $selectedSearch) {
                                         Text("Apple Music").tag(0)
                                         Text("Ваша медиатека").tag(1)

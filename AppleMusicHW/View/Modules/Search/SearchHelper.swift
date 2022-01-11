@@ -12,6 +12,9 @@ class SearchHelper: ObservableObject {
     private var track = [SearchModel]()
     var filteredTrack = [SearchModel]()
     
+    @ObservedObject var musicTrack = SearchModelsData()
+    @ObservedObject var stationTrack = SearchModelsData()
+    
     var publisher: AnyCancellable?
     
     @Published var searchText = ""
@@ -31,12 +34,12 @@ class SearchHelper: ObservableObject {
     }
     
     func fetchDataApple() {
-        track = appleMusic
+        track = musicTrack.appleMusic
         filteredTrack = track
     }
 
     func fetchDataOwn() {
-        track = radioStationList
+        track = stationTrack.radionStationList
         filteredTrack = track
     }
 }

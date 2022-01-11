@@ -12,9 +12,10 @@ enum Padding {
     // MARK: - Padding Search view
     static let searchViewPaddingTopTextSearch: CGFloat = 10
     static let searchViewPaddingTopDataText: CGFloat = 100
-    static let searchViewPaddingLeadingDataText: CGFloat = 12
+    static let searchViewPaddingLeading: CGFloat = 12
     static let searchViewPaddingBottomDataText: CGFloat = 0
-    static let searchViewPaddingTrailingDataText: CGFloat = 12
+    static let searchViewPaddingTrailing: CGFloat = 12
+    
     
     // MARK: - Padding SearchDetail view
     static let searchDetailViewPaddingTopDivider: CGFloat = 10
@@ -99,6 +100,7 @@ enum StackSpacing {
     static let Hspacing15: CGFloat = 15
     // MARK: - VStack
     static let Vspacing8: CGFloat = 8
+    static let Vspacing15: CGFloat = 8
 }
 
 enum FontSize {

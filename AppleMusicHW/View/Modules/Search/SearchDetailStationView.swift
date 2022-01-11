@@ -9,9 +9,7 @@ import SwiftUI
 
 struct SearchDetailStationView: View {
     @ObservedObject private var listData = StationModelsData()
-    private let rows = [
-        GridItem(.flexible())
-    ]
+    private let rows = [GridItem(.flexible())]
 
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
