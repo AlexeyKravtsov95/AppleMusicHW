@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct PortretView: View {
+struct PortraitView: View {
     @Binding var expand: Bool
     var height = UIScreen.main.bounds.height / 3
     var safeArea = UIApplication.shared.windows.first?.safeAreaInsets
