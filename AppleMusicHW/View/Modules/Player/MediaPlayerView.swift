@@ -16,7 +16,7 @@ struct MediaPlayerView: View {
     
     var body: some View {
         VStack {
-            PortretView(expand: $expand, animation: animation)
+            PortraitView(expand: $expand, animation: animation)
             VStack {
                 SongTextView(expand: $expand)
                 MiddleSectionView()
@@ -53,7 +53,9 @@ struct MediaPlayerView: View {
     
     func onEnded(value: DragGesture.Value) {
         
-        withAnimation(.interactiveSpring(response: Animation.response, dampingFraction: Animation.dampingFraction, blendDuration: Animation.blendDuration)) {
+        withAnimation(.interactiveSpring(response: Animation.response,
+                                         dampingFraction: Animation.dampingFraction,
+                                         blendDuration: Animation.blendDuration)) {
             
             if value.translation.height > height {
                 expand = false

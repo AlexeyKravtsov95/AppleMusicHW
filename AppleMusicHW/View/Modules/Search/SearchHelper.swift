@@ -26,7 +26,9 @@ class SearchHelper: ObservableObject {
             .receive(on: RunLoop.main)
             .sink(receiveValue: { str in
                 if !self.searchText.isEmpty {
-                    self.filteredTrack = self.track.filter { $0.title.localizedCaseInsensitiveContains(str) }
+                    self.filteredTrack = self.track.filter {
+                        $0.title.localizedCaseInsensitiveContains(str)
+                    }
                 } else {
                     self.filteredTrack = self.track
                 }

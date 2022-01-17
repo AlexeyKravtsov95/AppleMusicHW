@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8C7FA011278D73B000C0BD74 /* Metrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7FA010278D73B000C0BD74 /* Metrics.swift */; };
-		8C7FA013278D7C9900C0BD74 /* PortretView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7FA012278D7C9900C0BD74 /* PortretView.swift */; };
+		8C7FA013278D7C9900C0BD74 /* PortraitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7FA012278D7C9900C0BD74 /* PortraitView.swift */; };
 		8C7FA015278D7F1B00C0BD74 /* SongTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7FA014278D7F1B00C0BD74 /* SongTextView.swift */; };
 		8C7FA017278D80BE00C0BD74 /* BottomSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7FA016278D80BE00C0BD74 /* BottomSectionView.swift */; };
 		8C7FA019278D821F00C0BD74 /* MiddleSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7FA018278D821F00C0BD74 /* MiddleSectionView.swift */; };
@@ -43,7 +43,7 @@
 
 /* Begin PBXFileReference section */
 		8C7FA010278D73B000C0BD74 /* Metrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metrics.swift; sourceTree = "<group>"; };
-		8C7FA012278D7C9900C0BD74 /* PortretView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortretView.swift; sourceTree = "<group>"; };
+		8C7FA012278D7C9900C0BD74 /* PortraitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortraitView.swift; sourceTree = "<group>"; };
 		8C7FA014278D7F1B00C0BD74 /* SongTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongTextView.swift; sourceTree = "<group>"; };
 		8C7FA016278D80BE00C0BD74 /* BottomSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSectionView.swift; sourceTree = "<group>"; };
 		8C7FA018278D821F00C0BD74 /* MiddleSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiddleSectionView.swift; sourceTree = "<group>"; };
@@ -92,7 +92,7 @@
 		8C7FA01A278D8B3A00C0BD74 /* SubViews */ = {
 			isa = PBXGroup;
 			children = (
-				8C7FA012278D7C9900C0BD74 /* PortretView.swift */,
+				8C7FA012278D7C9900C0BD74 /* PortraitView.swift */,
 				8C7FA014278D7F1B00C0BD74 /* SongTextView.swift */,
 				8C7FA016278D80BE00C0BD74 /* BottomSectionView.swift */,
 				8C7FA018278D821F00C0BD74 /* MiddleSectionView.swift */,
@@ -303,7 +303,7 @@
 				8C8A6083271F53460008628F /* StationModels.swift in Sources */,
 				8C9EE2C3270C5E6200E2F852 /* LibraryEmptyView.swift in Sources */,
 				8C7FA019278D821F00C0BD74 /* MiddleSectionView.swift in Sources */,
-				8C7FA013278D7C9900C0BD74 /* PortretView.swift in Sources */,
+				8C7FA013278D7C9900C0BD74 /* PortraitView.swift in Sources */,
 				8C9EE2B4270C58D600E2F852 /* AppleMusicHWApp.swift in Sources */,
 				8C8A607D271F38CA0008628F /* RadioModels.swift in Sources */,
 				8C9EE2C5270C689B00E2F852 /* TabBarViews.swift in Sources */,

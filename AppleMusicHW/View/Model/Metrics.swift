@@ -16,7 +16,6 @@ enum Padding {
     static let searchViewPaddingBottomDataText: CGFloat = 0
     static let searchViewPaddingTrailing: CGFloat = 12
     
-    
     // MARK: - Padding SearchDetail view
     static let searchDetailViewPaddingTopDivider: CGFloat = 10
     static let searchDetailViewPaddingLeadingText: CGFloat = 64
@@ -36,7 +35,6 @@ enum Padding {
 
 enum Size {
     // MARK: - Search view
-
     static let searchViewFrameSizeWidth: CGFloat = 170
     static let searchViewFrameSizeHeight: CGFloat = 135
     
