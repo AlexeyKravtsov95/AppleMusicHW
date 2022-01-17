@@ -8,42 +8,59 @@
 import SwiftUI
 
 struct MediaPlayerView: View {
+    @Binding var expand: Bool
+    @State var offset: CGFloat = 0
+
+    @Namespace var animation
+    var height = UIScreen.main.bounds.height / 3
+    
     var body: some View {
         VStack {
-            HStack {
-                Image("lp")
-                    .resizable()
-                    .frame(width: 55, height: 55)
-                    .cornerRadius(15)
-                    .aspectRatio(contentMode: .fill)
-                Text("Linkin Park - Burn It Down")
-                    .fontWeight(.regular)
-                
-                Spacer()
-                Button(action: {}, label: {
-                    Image(systemName: "play.fill")
-                        .font(.title2)
-                        .foregroundColor(.black)
-                        .padding([.trailing], 10)
-                })
-                Button(action: {}, label: {
-                    Image(systemName: "forward.fill")
-                        .font(.title2)
-                        .foregroundColor(.gray)
-                })
+            PortraitView(expand: $expand, animation: animation)
+            VStack {
+                SongTextView(expand: $expand)
+                MiddleSectionView()
+                BottomSectionView()
             }
-            .offset(y: 2)
-            .padding()
-
+            .frame(width: expand ? nil : 0, height: expand ? nil : 0)
+            .opacity(expand ? 1 : 0)
+                
         }
-        .frame(height:65)
-        .background(Color.init("LightGray"))
-        .offset(y: -50)
+        
+        .frame(maxHeight: expand ?.infinity : Size.mediaPlayerViewMaxHeight)
+        .background(
+            VStack(spacing: 0) {
+                PlayerView()
+                Divider()
+            }.onTapGesture(count: 2) {
+                withAnimation(.spring()){expand = true}
+            }
+        )
+        .cornerRadius(expand ? Size.radius20 : 0)
+        .offset(y: expand ? 0 : Size.mediaPlayerViewOffsetY)
+        .offset(y: offset)
+        .gesture(DragGesture().onEnded(onEnded(value:)).onChanged(onChanged(value:)))
+        .ignoresSafeArea()
     }
-}
-
-struct MediaPlayer_Previews: PreviewProvider {
-    static var previews: some View {
-        MediaPlayerView()
+    
+    func onChanged(value: DragGesture.Value) {
+        
+        if value.translation.height > 0 && expand {
+            
+            offset = value.translation.height
+        }
+    }
+    
+    func onEnded(value: DragGesture.Value) {
+        
+        withAnimation(.interactiveSpring(response: Animation.response,
+                                         dampingFraction: Animation.dampingFraction,
+                                         blendDuration: Animation.blendDuration)) {
+            
+            if value.translation.height > height {
+                expand = false
+            }
+            offset = 0
+        }
     }
 }
